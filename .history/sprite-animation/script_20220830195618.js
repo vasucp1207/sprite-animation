@@ -79,7 +79,6 @@ animationStates.forEach((state, index) => {
 function animate() {
     ctx.clearRect(0, 0, width, height)
     let position = Math.floor(gameFrame / staggerFrames) % spriteAnimations[playerState].loc.length
-    
     // get same x and y position for 5 frames 
     let frameX = spriteWidth * position     
     let frameY = spriteAnimations[playerState].loc[position].y
