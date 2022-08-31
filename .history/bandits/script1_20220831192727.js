@@ -6,12 +6,13 @@ const spriteSelect = document.getElementById('state')
 
 spriteSelect.addEventListener('change', (e) => {
     spriteState = e.target.value
+    console.log(e.target.value)
 })
 
 width = canvas.width = 100
 height = canvas.height = 100
 
-const frameRate =7
+const frameRate = 5
 
 const sprite = new Image()
 sprite.src = './Bandits/Sprites/Heavy Bandit/HeavyBandit.png'
@@ -56,7 +57,7 @@ function animate(){
     ctx.clearRect(0, 0, width, height)
     posx = Math.floor(cnt / frameRate) % attackInfo[spriteState].frames
     posy = attackInfo[spriteState].y
-    ctx.drawImage(sprite, (posx * 48), (posy * 48), 48, 48, 0, 0, 100, 100)
+    ctx.drawImage(sprite, posx * 48, posy * 48, 48, 48, 0, 0, width, height)
     cnt++
     requestAnimationFrame(animate)
 }

@@ -56,7 +56,7 @@ function animate(){
     ctx.clearRect(0, 0, width, height)
     posx = Math.floor(cnt / frameRate) % attackInfo[spriteState].frames
     posy = attackInfo[spriteState].y
-    ctx.drawImage(sprite, (posx * 48), (posy * 48), 48, 48, 0, 0, 100, 100)
+    ctx.drawImage(sprite, (posx * 48), (posy * 48), 48, 48, 0, height / 2, 100, 100)
     cnt++
     requestAnimationFrame(animate)
 }
